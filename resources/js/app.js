@@ -7,6 +7,7 @@ import { createInertiaApp, usePage } from "@inertiajs/vue3";
 import { ZiggyVue } from "ziggy";
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import vuetify from "./plugins/vuetify";
+import VueMain from "./Layouts/VueMain.vue";
 
 createInertiaApp({
    title: (title) => {
@@ -21,15 +22,7 @@ createInertiaApp({
         )
 
         page.then((module) => {
-            if (name.startsWith("Auth/")) {
-                module.default.layout = AuthLayout
-            }  else if (name.startsWith("Public/")) {
-                module.default.layout = LayoutPublic
-            } else if (name.startsWith("Error/")) {
-                module.default.layout = LayoutPublic
-            } else {
-                module.default.layout = module.default.layout || Layout
-            }
+            module.default.layout = VueMain
         }).catch((error) => {
             console.log(error)
         })
