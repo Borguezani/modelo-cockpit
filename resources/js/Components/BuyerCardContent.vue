@@ -1,15 +1,16 @@
 <template>
-    <div class="buyer-card-content">
-        <BuyerMetricCard
-            v-for="metric in metrics"
-            :key="metric.title"
-            :title="metric.title"
-            :value="metric.value"
-            :detail="metric.detail"
-            :progress="metric.progress"
-            :accent="metric.accent"
-        />
-    </div>
+    <v-row class="pb-3 px-3" dense>
+        <div v-if="metrics.length <= 0" class="text-body-small px-4">Sem métricas para exibir</div>
+        <v-col v-else v-for="metric in metrics" :key="metric.title" cols="12" sm="6">
+            <BuyerMetricCard
+                :title="metric.title"
+                :value="metric.value"
+                :detail="metric.detail"
+                :progress="metric.progress"
+                :accent="metric.accent"
+            />
+        </v-col>
+    </v-row>
 </template>
 
 <script setup>
@@ -23,18 +24,3 @@ defineProps({
     },
 });
 </script>
-
-<style lang="scss" scoped>
-.buyer-card-content {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
-    padding: 0 1.15rem 1.1rem;
-}
-
-@media (max-width: 640px) {
-    .buyer-card-content {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
