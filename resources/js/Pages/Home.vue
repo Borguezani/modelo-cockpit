@@ -1,4 +1,5 @@
 <template>
+    <HeaderTemplate title="Dashboard" subtitle="Visão geral de compradores e vendedores" :hasBackButton="true" :hasActionButton="true" :actionButton="{icon: 'mdi-domain', label: 'Portal Nestle', color: '#8367F4'} " @handleActionButton="handleActionButton" />
             <v-container fluid class="fill-height d-flex flex-col align-center justify-center">
                 <SectionWrapper title="Compradores" color="#8367F4">
                     <v-row>
@@ -38,6 +39,7 @@ import DefaultCard from '../Components/Cards/DefaultCard.vue';
 import BuyerCardHeader from '../Components/BuyerCardHeader.vue';
 import BuyerCardContent from '../Components/BuyerCardContent.vue';
 import SectionWrapper from '../Components/SectionWrapper.vue';
+import HeaderTemplate from '../Layouts/HeaderTemplate.vue';
 
 const metrics = [
     {
@@ -76,6 +78,10 @@ defineProps({
 
 const handleCardClick = () => {
     alert('Card clicado!');
+};
+
+const handleActionButton = () => {
+    window.open('https://www.nestle.com.br/', '_blank');
 };
 </script>
 
