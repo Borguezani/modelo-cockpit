@@ -12,6 +12,7 @@ export const themeDark = {
     colors: {
         background: "#25293c",
         surface: "#233045",
+        "header-background": "#10192d",
         "surface-variant": "#343C58",
         primary: "#8367F4",
         secondary: "#AEAFC1",
