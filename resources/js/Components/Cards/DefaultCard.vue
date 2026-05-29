@@ -1,7 +1,7 @@
 <template>
     <VCard
         elevation="2"
-        class="buyer-performance-card"
+        class="default-card"
         :class="[background, { 'cursor-pointer': clickable }]"
         @click="handleClick"
     >
@@ -34,7 +34,7 @@ function handleClick() {
 
 <style lang="scss" scoped>
 
-.buyer-performance-card {
+.default-card {
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 22px 50px rgba(11, 20, 35, 0.28);
     color: #f7f9fd;
@@ -45,12 +45,8 @@ function handleClick() {
         transform: translateY(-4px);
         box-shadow: 0 18px 28px rgba(13, 71, 161, 0.12) !important;
 
-        :deep(.buyer-card-header .actions) {
-            color: #ffffff;
-        }
-
-        :deep(.buyer-card-header .icon-button) {
-            color: #ffffff;
+        :deep(.icon-button-active) {
+            color: #ffffff !important;
         }
     }
 }

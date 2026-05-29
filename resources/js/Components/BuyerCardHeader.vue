@@ -17,25 +17,20 @@
                 {{ initials }}
             </v-avatar>
 
-            <div class="min-w-0">
-                <p class="text-body-small text-medium-emphasis ma-0" style="line-height: 1.2;">
-                    {{ label }}
-                </p>
-                <h2 class="text-body-medium font-weight-bold text-white ma-0" style="line-height: 1.1;">
-                    {{ name }}
-                </h2>
-            </div>
+            <labeled-title :label="label" :name="name" />
 
         </div>
 
         <div class="actions d-flex align-center ga-1">
-            <v-icon size="x-small" class="icon-button" :icon="leadingIcon" :size="iconSize" />
-            <v-icon size="x-small" class="icon-button" :icon="trailingIcon" :size="iconSize" />
+            <v-icon size="x-small" class="icon-button icon-button-active" :icon="leadingIcon" :size="iconSize" />
+            <v-icon size="x-small" class="icon-button icon-button-active" :icon="trailingIcon" :size="iconSize" />
         </div>
     </div>
 </template>
 
 <script setup>
+import LabeledTitle from './LabeledTitle.vue';
+
 const emit = defineEmits(['handleClick']);
 
 const props = defineProps({
