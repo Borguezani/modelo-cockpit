@@ -4,8 +4,8 @@
             <div class="d-flex flex-row align-center ga-4">
                 <div class="d-flex align-center ga-4">
                     <div v-if="hasBackButton" @click="$emit('handleBackButton')" class="handle-back-button text-body-small text-medium-emphasis">
-                            <v-icon left>mdi-arrow-left</v-icon>
-                            {{ backButtonLabel }}
+                            <v-icon left>{{ backButton.icon }}</v-icon>
+                            {{ backButton.label }}
                     </div>
                 </div>
 
@@ -48,10 +48,13 @@ defineProps({
         required: false,
         default: false,
     },
-    backButtonLabel: {
-        type: String,
+    backButton: {
+        type: Object,
         required: false,
-        default: 'Voltar',
+        default: () => ({
+            label: 'Voltar',
+            icon: 'mdi-arrow-left',
+        }),
     },
     hasActionButton: {
         type: Boolean,
@@ -80,8 +83,8 @@ defineProps({
         align-items: center;
         gap: 4px;
 
-        &hover {
-            color: #ffffff !important;
-        }
+    }
+    .handle-back-button:hover {
+        color: #ffffff !important;
     }
 </style>

@@ -1,5 +1,13 @@
 <template>
-    <HeaderTemplate title="Dashboard" subtitle="Visão geral de compradores e vendedores" :hasBackButton="true" :hasActionButton="true" :actionButton="{icon: 'mdi-domain', label: 'Portal Nestle', color: '#8367F4'} " @handleActionButton="handleActionButton" />
+    <HeaderTemplate
+    title="Dashboard"
+    subtitle="Visão geral de compradores e vendedores"
+    :backButton="{icon: 'mdi-arrow-left', label: 'Voltar'}"
+    :hasBackButton="true"
+    :hasActionButton="true"
+    :actionButton="{icon: 'mdi-domain', label: 'Portal Nestle', color: '#8367F4'} "
+    @handleActionButton="handleActionButton"
+    />
             <v-container fluid class="fill-height d-flex flex-col align-center justify-center">
                 <SectionWrapper title="Compradores" color="#8367F4">
                     <v-row>
