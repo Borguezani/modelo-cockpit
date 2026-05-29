@@ -25,6 +25,28 @@
                     >
                         teste
                     </v-btn>
+                    <div class="d-flex ga-3">
+        <StatusChip
+            color="warning"
+            icon="mdi-alert-circle-outline"
+            :count="16"
+            label="Pendentes"
+        />
+
+        <StatusChip
+            color="success"
+            icon="mdi-check-circle-outline"
+            :count="4"
+            label="Confirmados"
+        />
+
+        <StatusChip
+            color="info"
+            icon="mdi-check-circle-outline"
+            :count="6"
+            label="Realizados"
+        />
+    </div>
         </template>
     </HeaderTemplate>
     <div class="px-4 py-6">
@@ -67,6 +89,7 @@ import BuyerCardHeader from '../Components/BuyerCardHeader.vue';
 import BuyerCardContent from '../Components/BuyerCardContent.vue';
 import SectionWrapper from '../Components/SectionWrapper.vue';
 import HeaderTemplate from '../Layouts/HeaderTemplate.vue';
+import StatusChip from '../Components/StatusChip.vue';
 
 const metrics = [
     {

@@ -57,7 +57,6 @@
 </template>
 
 <script setup>
-// O script permanece exatamente igual
 import { useSlots } from 'vue';
 
 const slots = useSlots();
